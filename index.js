@@ -82,3 +82,29 @@ function sortCarsByYear(carsArray) {
 // Sort the cars and print the result
 const sortedCars = sortCarsByYear(cars);
 console.log(sortedCars);
+
+// --------------------------------------------------------------------------------
+// 5.Task: Find And Modify
+// Write A Function That Searches An Array Of Objects For A Specific Person By Name. If Found, Modify Their Age Property. Print The Updated Array.
+// Sample array of person objects
+const peoples = [
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "Charlie", age: 35 },
+  { name: "David", age: 28 },
+];
+
+function updatePersonAge(peopleArray, nameToFind, newAge) {
+  const updatedArray = peopleArray.map((person) => {
+    if (person.name.toLowerCase() === nameToFind.toLowerCase()) {
+      return { ...person, age: newAge };
+    }
+    return person;
+  });
+
+  console.log(updatedArray);
+  return updatedArray;
+}
+
+// Example usage
+updatePersonAge(peoples, "Bob", 26);
